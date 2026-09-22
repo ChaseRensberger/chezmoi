@@ -2,7 +2,7 @@
 opacity = 1
 
 [font]
-size = 12
+size = {{ if eq .chezmoi.os "darwin"}}18{{ else }}12{{ end }}
 
 [font.normal]
 family = "FiraCode Nerd Font Mono"
