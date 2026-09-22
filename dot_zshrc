@@ -17,11 +17,11 @@ export PATH=$HOME/.asdf/shims:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export GOPATH="$(go env GOPATH)"
 export PATH=$GOPATH/bin:$PATH
-export PATH=/home/chase/.local/bin:$PATH
-export PATH=/home/chase/.opencode/bin:$PATH
-export PATH=/home/chase/Projects/wingman/clients/tui/wingcode/dist:$PATH
-export PATH=/home/chase/.wingman/bin:$PATH
-export PATH=/home/chase/.bun/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
+export PATH=$HOME/Projects/wingman/clients/tui/wingcode/dist:$PATH
+export PATH=$HOME/.wingman/bin:$PATH
+export PATH=$HOME/.bun/bin:$PATH
 export PATH=$HOME/AppImages:$PATH
 
 alias ff=fastfetch
@@ -31,7 +31,6 @@ alias open=xdg-open
 alias task=go-task
 alias oc=opencode2
 
-export PATH=/home/chase/.wingman/bin:$PATH
 
 bestla() {
 	ssh -N -L "${1}:localhost:${1}" chase.rensberger@bestla
