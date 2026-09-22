@@ -9,7 +9,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-[ -f ~/.secrets ] && source ~/.secrets
 
 export EDITOR=nvim
 
@@ -27,24 +26,7 @@ export PATH=$HOME/AppImages:$PATH
 alias ff=fastfetch
 alias lg=lazygit
 alias ld=lazydocker
-alias open=xdg-open
-alias task=go-task
 alias oc=opencode2
 
-
-bestla() {
-	ssh -N -L "${1}:localhost:${1}" chase.rensberger@bestla
-}
-
-t7mount() {
-	udisksctl mount -b /dev/disk/by-uuid/58D5-6AB1
-}
-
-t7eject() {
-  local partition=/dev/disk/by-uuid/58D5-6AB1
-  local disk="/dev/$(lsblk -no PKNAME "$partition")"
-
-  udisksctl unmount -b "$partition" &&
-    udisksctl power-off -b "$disk"
-}
-
+[ -f ~/.secrets ] && source ~/.secrets
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
