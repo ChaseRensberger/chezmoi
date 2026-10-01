@@ -331,10 +331,10 @@ require("lazy").setup({
 				})
 			end,
 		},
+		{ "mason-org/mason.nvim" },
 		{
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig",
+			"mason-org/mason-lspconfig.nvim",
+			dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
 		},
 		{
 			'nvim-lualine/lualine.nvim',
@@ -468,11 +468,6 @@ cmp.setup({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "ts_ls", "gopls", "html", "cssls", "rust_analyzer", "clangd", "ruff", "tailwindcss" },
-	automatic_installation = true,
-	automatic_enable = true,
-})
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -506,18 +501,37 @@ vim.lsp.config.ruff = {
 	capabilities = capabilities,
 	init_options = {
 		settings = {
-			logLevel = "debug",
+			logLevel = "info",
 		},
 	},
 }
 
-local servers_with_defaults = { "rust_analyzer", "ts_ls", "gopls", "html", "cssls", "clangd", "basedpyright" }
+local servers_with_defaults = { "rust_analyzer", "ts_ls", "gopls", "html", "cssls", "clangd", "ty" }
 
 for _, server in ipairs(servers_with_defaults) do
 	vim.lsp.config[server] = {
 		capabilities = capabilities,
 	}
 end
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("PythonLsp", { clear = true }),
+	callback = function(event)
+		local client = vim.lsp.get_client_by_id(event.data.client_id)
+		if client and client.name == "ruff" then
+			-- Let ty provide Python hover documentation.
+			client.server_capabilities.hoverProvider = false
+		end
+	end,
+})
+
+-- Configure servers before Mason enables them.
+require("mason-lspconfig").setup({
+	ensure_installed = { "lua_ls", "ts_ls", "gopls", "html", "cssls", "rust_analyzer", "clangd", "ty", "ruff", "tailwindcss" },
+	automatic_enable = {
+		exclude = { "basedpyright", "pyright", "ruff_lsp" },
+	},
+})
 
 require("conform").setup({
 	formatters_by_ft = {
@@ -531,13 +545,8 @@ require("conform").setup({
 		css = { "oxfmt" },
 		go = { "gofumpt" },
 		rust = { "rust-analyzer" },
-		python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+		python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 		cpp = { "clang-format" },
-	},
-	formatters = {
-		black = {
-			prepend_args = { "--fast", "--target-version", "py312" },
-		},
 	},
 	format_on_save = {
 		timeout_ms = 5000,
