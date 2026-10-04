@@ -54,15 +54,9 @@
   },
   "mcp": {
     "servers": {
-      "chrome-devtools": {
+      "whiteboard": {
         "type": "local",
-        "command": [
-          "npx",
-          "-y",
-          "chrome-devtools-mcp@latest",
-          "--executablePath",
-          "/usr/bin/chromium"
-        ]
+        "command": ["sh", "-c", "exec \"$HOME/.local/bin/whiteboard\" mcp"]
       }
     }
   }
