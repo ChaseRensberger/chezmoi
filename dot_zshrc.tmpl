@@ -29,10 +29,10 @@ bindkey -v
 autoload -Uz compinit
 compinit
 
-if [[ "$OSTYPE" == darwin* ]]; then
-  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-else
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+{{ if eq .chezmoi.os "darwin" }}
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+{{ else }}
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+{{ end }}
 
 eval "$(starship init zsh)"
