@@ -36,3 +36,9 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 {{ end }}
 
 eval "$(starship init zsh)"
+
+{{ if eq .chezmoi.os "darwin" }}
+clip_send() {
+	pbpaste | ssh chase@earth "WAYLAND_DISPLAY=wayland-1 wl-copy >/dev/null 2>&1"
+}
+{{ end }}
