@@ -2,6 +2,8 @@
 
 These are personal defaults. Follow explicit task requirements and repository instructions when they differ.
 
+- Before development work load the `chase-dev` skill and follow its instructions.
+
 ## Communication and writing
 
 - Keep responses short, but explain unfamiliar commands and important design choices.
