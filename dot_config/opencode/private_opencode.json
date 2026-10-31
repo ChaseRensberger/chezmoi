@@ -54,9 +54,15 @@
   },
   "mcp": {
     "servers": {
-      "whiteboard": {
+      "rea": {
         "type": "local",
-        "command": ["sh", "-c", "exec \"$HOME/.local/bin/whiteboard\" mcp"]
+        "command": [
+          "npx",
+          "-y",
+          "rea-agents@6.8.0",
+          "mcp"
+        ],
+        "environment": {}
       }
     }
   }
