@@ -16,6 +16,15 @@ alias lg=lazygit
 alias ld=lazydocker
 alias oc=opencode
 
+{{ if eq .chezmoi.os "linux" }}
+# Remove this workaround if the Obsidian Headless package fixes its Node launcher.
+if [[ -x /usr/bin/node && -f /usr/bin/ob && -r /usr/bin/ob ]]; then
+    function ob() {
+        /usr/bin/node /usr/bin/ob "$@"
+    }
+fi
+{{ end }}
+
 [ -f ~/.secrets ] && source ~/.secrets
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
