@@ -1,0 +1,33 @@
+# Rensberger light
+
+[colors.primary]
+background = '#f7f1e3'
+foreground = '#24251f'
+
+[colors.cursor]
+cursor = '#ff5a1f'
+text = '#24251f'
+
+[colors.selection]
+background = '#f2dfcf'
+text = '#24251f'
+
+[colors.normal]
+black = '#f7f1e3'
+red = '#a82e20'
+green = '#27613f'
+yellow = '#795000'
+blue = '#a3330b'
+magenta = '#a3330b'
+cyan = '#a3330b'
+white = '#24251f'
+
+[colors.bright]
+black = '#626159'
+red = '#a82e20'
+green = '#27613f'
+yellow = '#795000'
+blue = '#a3330b'
+magenta = '#a3330b'
+cyan = '#a3330b'
+white = '#24251f'

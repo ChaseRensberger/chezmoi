@@ -1,0 +1,33 @@
+# Rensberger dark
+
+[colors.primary]
+background = '#090909'
+foreground = '#f7f1e3'
+
+[colors.cursor]
+cursor = '#ff5a1f'
+text = '#24251f'
+
+[colors.selection]
+background = '#382218'
+text = '#f7f1e3'
+
+[colors.normal]
+black = '#090909'
+red = '#ff9488'
+green = '#87c99b'
+yellow = '#efc16a'
+blue = '#ff936e'
+magenta = '#ff936e'
+cyan = '#ff936e'
+white = '#f7f1e3'
+
+[colors.bright]
+black = '#aaa99f'
+red = '#ff9488'
+green = '#87c99b'
+yellow = '#efc16a'
+blue = '#ff936e'
+magenta = '#ff936e'
+cyan = '#ff936e'
+white = '#f7f1e3'
