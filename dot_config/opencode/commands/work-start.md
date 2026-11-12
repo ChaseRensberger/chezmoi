@@ -13,5 +13,13 @@ Start or resume the task from prior context and optional guidance.
 6. Prepare dependencies and isolated servers as needed. Confirm ports, data paths, authentication, and the UI's backend target. Reuse the same worktree if setup fails.
 7. Note forgotten tasks that need attention, then begin the agreed work unless the user requested setup only.
 
+Other notes:
+
+Isolate task ports, data, credentials, dependencies, and build output. Share caches, not writable build directories or symlinked `node_modules`. Confirm listeners, API target, authentication, and readiness.
+
+Use detached worktrees
+
+Stop only verified task-owned processes. Preserve unpublished work, useful data, other worktrees, and shared caches.
+
 User guidance:
 $ARGUMENTS
