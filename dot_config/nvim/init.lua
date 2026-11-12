@@ -271,6 +271,7 @@ require("lazy").setup({
 						{ name = "one-dark",    colorscheme = "onedark" },
 						{ name = "osaka-jade",  colorscheme = "solarized-osaka" },
 						{ name = "palenight",   colorscheme = "palenight" },
+						{ name = "rensberger",  colorscheme = "rensberger" },
 						{ name = "rosepine",    colorscheme = "rose-pine" },
 						{ name = "solarized",   colorscheme = "solarized" },
 						{ name = "synthwave84", colorscheme = "synthwave84" },
