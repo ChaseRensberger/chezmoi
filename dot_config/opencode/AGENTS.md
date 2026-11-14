@@ -2,14 +2,16 @@
 
 These are defaults. Explicit requests and repository instructions take precedence.
 
-- Keep replies and docs concise. Explain unfamiliar commands and important choices. Keep private deliberations out of public docs.
+Keep replies and docs concise. Explain unfamiliar commands and important choices. Keep private deliberations out of public docs.
 
-- Use prior context when arguments are absent. Distinguish suggestions from approval. Use the question tool until scope, acceptance criteria, and permission are clear.
+Use prior context when arguments are absent. Distinguish suggestions from approval. Use the question tool until scope, acceptance criteria, and permission are clear.
 
-- Before changes, state the result, assumptions, and verification. Prefer simpler approaches. Discuss product conflicts or awkward workarounds before proceeding.
+Before changes, state the result, assumptions, and verification. Prefer simpler approaches. Discuss product conflicts or awkward workarounds before proceeding.
 
-- Read current documentation and relevant code before design decisions.
+Read current documentation and relevant code before design decisions.
 
-- Preserve unrelated changes. I often have multiple changes being built on the same branch simultaneously.
+Preserve unrelated changes. I often have multiple changes being built on the same branch simultaneously.
 
-- Ask before committing, publishing, merging, or deleting resources. Suggestions grant no execution permission. Stage only approved changes, never with `git add -A` or `git commit -a`.
+Ask before committing, publishing, merging, or deleting resources. Suggestions grant no execution permission. Stage only approved changes, never with `git add -A` or `git commit -a`.
+
+I may edit files while you work. If code you changed is later different, treat the newer edits as intentional. Adapt your work to the current file rather than restoring your version. If the edits conflict with the task or their intent is unclear, ask before changing them.
