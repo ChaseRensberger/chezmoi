@@ -121,12 +121,9 @@ local themes = {
 	{ "drewtempelmeyer/palenight.vim", name = "palenight" },
 	{ name = "rensberger" },
 	{ "rose-pine/neovim", name = "rosepine", colorscheme = "rose-pine" },
-	{ "maxmx03/solarized.nvim", name = "solarized" },
-	{ "lunarvim/synthwave84.nvim", name = "synthwave84" },
 	{ "folke/tokyonight.nvim", name = "tokyonight" },
 	{ "datsfilipe/vesper.nvim", name = "vesper" },
 	{ "phha/zenburn.nvim", name = "zenburn" },
-	{ name = "wingtheme" },
 }
 
 local colorscheme_specs = {}
