@@ -12,6 +12,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 local transparent = false
 
+vim.filetype.add({
+	extension = { mdx = "mdx" },
+})
+
 -- =============================================================================
 -- Keymaps
 -- =============================================================================
@@ -105,22 +109,15 @@ vim.opt.rtp:prepend(lazypath)
 local themes = {
 	{ "idr4n/andromeda.nvim", name = "andromeda" },
 	{ "Shatur/neovim-ayu", name = "ayu" },
-	{ "EdenEast/nightfox.nvim", name = "carbonfox" },
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "chaserensberger/christmas.nvim", name = "christmas" },
-	{ "lalitmee/cobalt2.nvim", name = "cobalt2" },
 	{ "Mofiqul/dracula.nvim", name = "dracula" },
 	{ "sainnhe/everforest", name = "everforest" },
-	{ "kepano/flexoki-neovim", name = "flexoki" },
-	{ "projekt0n/github-nvim-theme", name = "github-theme", label = "github", colorscheme = "github_dark" },
 	{ "ellisonleao/gruvbox.nvim", name = "gruvbox" },
 	{ "rebelot/kanagawa.nvim", name = "kanagawa" },
-	{ "marko-cerovac/material.nvim", name = "material" },
-	{ "tanvirtin/monokai.nvim", name = "monokai" },
 	{ "oxfist/night-owl.nvim", name = "night-owl", label = "nightowl" },
 	{ "shaunsingh/nord.nvim", name = "nord" },
 	{ "navarasu/onedark.nvim", name = "onedark", label = "one-dark" },
-	{ "craftzdog/solarized-osaka.nvim", name = "osaka-jade", colorscheme = "solarized-osaka" },
 	{ "drewtempelmeyer/palenight.vim", name = "palenight" },
 	{ name = "rensberger" },
 	{ "rose-pine/neovim", name = "rosepine", colorscheme = "rose-pine" },
@@ -347,7 +344,12 @@ require("lazy").setup({
 					typescript = { "oxfmt" },
 					typescriptreact = { "oxfmt" },
 					html = { "oxfmt" },
+					astro = { "oxfmt" },
+					markdown = { "oxfmt" },
+					mdx = { "oxfmt" },
 					json = { "oxfmt" },
+					jsonc = { "oxfmt" },
+					yaml = { "oxfmt" },
 					css = { "oxfmt" },
 					go = { "gofumpt" },
 					rust = { "rustfmt" },
