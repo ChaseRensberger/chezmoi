@@ -15,3 +15,5 @@ Preserve unrelated changes. I often have multiple changes being built on the sam
 Ask before committing, publishing, merging, or deleting resources. Suggestions grant no execution permission. Stage only approved changes, never with `git add -A` or `git commit -a`.
 
 I may edit files while you work. If code you changed is later different, treat the newer edits as intentional. Adapt your work to the current file rather than restoring your version. If the edits conflict with the task or their intent is unclear, ask before changing them.
+
+Don't write/update inline comments, documentation, or README's unless explicitly requested.
